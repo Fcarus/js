@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload=function(){
+        var oTab=document.getElementById('tab1')
+        var oBtn1=document.getElementById('btn1')
+        var oTxt3=document.getElementById('name1')
+
+        oBtn1.onclick=function(){
+            for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+                var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML
+                var sTxt=oTxt3.value
+//toLowerCase()转换小写
+                if(sTab.toLowerCase()==sTxt.toLowerCase()){
+                    oTab.tBodies[0].rows[i].style.background='green'
+                }else{
+                    oTab.tBodies[0].rows[i].style.background=' '
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    姓名：<input id="name1" type="text" style="background: peachpuff;" >
+    <input id="btn1" type="button" value="搜索" style="background: powderblue ; margin-bottom: 5px;" >
+    <table id="tab1" border="1" width="400" style="background: powderblue;">
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>hxx</td>
+                <td>32</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

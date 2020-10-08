@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1 img{
+        width: 300px;height: 150px;opacity: 0.3;
+    }
+    </style>
+    <script>
+        window.onload=function(){
+            var oImg=document.getElementById('img')
+
+            oImg.onmouseover=function(){
+                toopacity(1)
+            }
+            oImg.onmouseout=function(){
+                toopacity(0.6)
+            }
+        }
+      var timer=null
+      var Alpha=0.3
+ 
+      function toopacity(iTarget){
+        var oImg=document.getElementById('img')
+        clearInterval(timer)
+
+        timer=setInterval(function(){
+            var speed=0
+            if(Alpha<iTarget){
+              speed=0.1
+            }else{
+              speed=-0.1
+             }
+          if(Alpha==iTarget){
+              clearInterval(timer)
+          }else{
+            Alpha+=speed
+
+            oImg.style.opacity=Alpha
+          }
+        },30)
+    }
+    </script>
+</head>
+<body>
+    <div id="div1" ><img id="img" src="1.jpg" alt=""></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body{
+    background: skyblue;
+}
+#tab{
+    width: 440px;
+    height: 700px;
+    background:rgb(180, 180, 180);
+    margin-left: 700px;
+    margin-top: 10px;
+    position: absolute;
+}
+#tab ul{margin-top: 20px;}
+#tab ul li {
+    width: 100px;
+    height: 100px;
+    background: rgb(37, 37, 37);
+    margin: 10px;
+    list-style: none;
+    float: left;
+    text-align: center;
+    border: 1px solid #000;
+    color: white;
+}
+#tab .active{background: white;
+    color: rgb(252, 46, 132);
+}
+.text{
+    background: rgb(228, 228, 228);
+    width: 335px;
+    height: 150px;
+    font-size: 15px;
+    margin-top: 520px;
+    position: relative;
+    margin-left: 50px;
+    border: 2px solid rgb(219, 219, 219);
+    padding-left: 10px;
+}

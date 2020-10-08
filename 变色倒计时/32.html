@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/global.css">
+    <style>
+
+    </style>
+    <script>
+       window.onload=function(){
+           document.getElementsByTagName("input")[0].onclick=function () {
+             var oDiv=document.getElementById("box");
+             var btn=document.createElement("button")
+             oDiv.appendChild(btn)
+           } 
+           document.getElementsByTagName("input")[1].onclick=function(){
+               var txt=document.getElementsByClassName("txt")
+               var otab1=document.getElementById("tab")
+               var atr=document.createElement("tr");
+               otab1.appendChild(atr);
+               for(var a=0;a<txt.length;a++){
+                   var td=document.createElement("td");
+                   td.innerHTML=txt[a].value;
+                   atr.appendChild(td)
+               }
+           }
+
+
+
+           
+       }
+    </script>
+</head>
+<body>
+    <div id="box" ></div>
+    <input type="button" style="width: 100px;height: 30px;" value="追加按钮" >
+    <input type="button" style="width: 100px;height: 30px;" value="追加表格" ><br>
+    <input type="text" class="txt" style="height: 25px;width: 150px;" value="年龄" >
+    <input type="text" class="txt" style="height: 25px;width: 150px;" value="名字" >
+    <table border="1px;" id="tab" width="150px" >
+        <tr>
+            <td>年龄</td>
+            <td>名字</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{background: papayawhip;}
+    </style>
+    <script>
+    window.onload=function(){
+        var oTab=document.getElementById('tab1')
+        var oTxt1=document.getElementById('name')
+        var oTxt2=document.getElementById('age')
+        var oBtn=document.getElementById('btn')
+        var oBtn1=document.getElementById('btn1')
+        var oTxt3=document.getElementById('name1')
+        var id=oTab.tBodies[0].rows.length+1
+        var oldColor=' ';
+        var sTab=oTab.tBodies[0].rows
+        oBtn.onclick=function(){
+            var oTr=document.createElement('tr')
+            var oTd=document.createElement('td')
+            function std(){oTd=document.createElement('td')}
+            std()
+            oTd.innerHTML=id++
+            oTr.appendChild(oTd)
+            std()
+            oTd.innerHTML=oTxt1.value
+            oTr.appendChild(oTd)
+            std()
+            oTd.innerHTML=oTxt2.value
+            oTr.appendChild(oTd)
+            std()
+            oTd.innerHTML='<a href="#">删除</a>'
+            oTr.appendChild(oTd)
+            oTab.tBodies[0].appendChild(oTr)
+            oTd.getElementsByTagName('a')[0].onclick=function(){
+                oTab.tBodies[0].removeChild(this.parentNode.parentNode)
+            }
+            for(var i=0;i<sTab.length;i++){
+                sTab[i].onmouseover=function(){
+                oldColor=this.style.background;
+                this.style.background='white'
+            }
+            sTab[i].onmouseout=function(){
+                this.style.background=oldColor
+            }
+             if(i%2==0){
+                sTab[i].style.background='paleturquoise'
+             }else{sTab[i].style.background='palegoldenrod'}
+            }
+        }
+         oBtn1.onclick=function(){
+            for(var i=0;i<sTab.length;i++){
+                if(sTab[i].cells[1].innerHTML==oTxt3.value){
+                    sTab[i].style.background='green'
+                }else{
+                    sTab[i].style.background=oldColor
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <input id="name" type="text" style="background: peachpuff;">
+    <input id="age" type="text" style="background: peachpuff;">
+    <input id="btn" value="添加" type="button" style="margin-bottom: 5px; background: powderblue; ">
+    姓名：<input id="name1" type="text" style="background: peachpuff;" >
+    <input id="btn1" type="button" value="搜索" style="background: powderblue;" >
+    <table id="tab1" border="1" width="400" style="background: powderblue;">
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+</body>
+</html>

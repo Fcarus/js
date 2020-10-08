@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    #img{width: 300px;height: 300px;}
+    </style>
+    <script>
+    function dimg(name){
+        var oimg1=document.getElementById('img')
+        oimg1.src=name
+    }
+    </script>
+</head>
+<body>
+   <img style="display: block;" id="img" src="1.jpg" alt="">
+   <button id="button1" onclick="dimg('1.jpg');" >1</button>
+   <button id="button2" onclick="dimg('2.jpg');" >2</button>
+   <button id="button3" onclick="dimg('3.jpg');" >3</button>
+</body>
+</html>
